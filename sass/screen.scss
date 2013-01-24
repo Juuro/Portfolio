@@ -1,0 +1,334 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+
+/**** variables ****/
+$menuWidth: 750px;
+$experimental-support-for-svg: true;
+$experimental-support-for-mozilla : true !default;
+$experimental-support-for-webkit : true !default;
+$support-for-original-webkit-gradients : true !default;
+$experimental-support-for-opera : true !default;
+$experimental-support-for-microsoft : true !default;
+$experimental-support-for-khtml : true !default;
+
+@font-face { 
+    font-family: 'Young Love'; 
+    src: url('../fonts/younglovees.ttf') format('truetype'); 
+} 
+
+html {
+    @include box-shadow(0 0 200px rgba(0,0,0,0.9)  inset);
+    //overflow: hidden;
+    height: 100%
+}
+
+body {
+    background: white url(http://subtlepatterns.com/images/bgnoise.png) 50% 100% fixed;
+    font-family: 'Source Sans Pro', sans-serif;    
+    margin: 0;
+}
+
+#blocksWrapper {
+    position: relative;
+    margin: 0px auto;
+    padding: 15px 0px;
+}
+
+header h1, header h2 {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    font: 600 normal 80px/90px "Helvetica Neue",Helvetica,sans-serif;
+    text-shadow: 0 2px 3px rgba(40,41,42,0.6),
+                0 4px 0 rgba(150,150,150,0.5),
+                0 9px 5px rgba(0,0,0,0.5);
+    z-index: 2000;
+}
+
+header h2 {
+    font: 180px "Young Love";
+    text-shadow: 0px 0px 100px 
+    rgba(0, 0, 0, 0.8);
+    margin-top: -30px;
+    z-index: 1000;
+}
+
+
+.cont {
+    width: 160px;
+    height: 160px;
+    text-align: left;
+    margin: 8px;
+    display: inline-block;
+    cursor: pointer;
+    
+    &.scripts .front {    
+        @include background(linear-gradient(-45deg, #009ac2 20%, #00c2f4 70%));
+    }
+    
+    &.webdev .front {
+        @include background(linear-gradient(-45deg, #b90f3a 20%, #e91348 70%));
+    }
+    
+    &.photo .front {
+        @include background(linear-gradient(-45deg, #6d3987 20%, #8b49ab 70%));
+    }
+    
+    &.ps .front {
+        @include background(linear-gradient(-45deg, #00984c 20%, #00cb66 70%));
+    }
+
+    .block {
+        width: 100%;
+        height: 100%;
+        @include transition(all 1s ease);
+        position: relative;
+        @include transform(perspective(200px));
+        @include transform-style(preserve-3d);
+        @include transform-origin(0px 50% /*-0.1px*/ 0px);
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        color: white;
+        font-weight: 600;
+        text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3),  0px -1px 0px rgba(0, 0, 0, 0.3);
+        z-index: 2000;
+        
+        p {
+            display: none;
+        
+            &.active p {
+                width: 90%;
+                background-color: rgba(255, 0, 160, .6);
+                position: absolute;
+                bottom: 0px;
+                margin: 0;
+                padding: 5%;
+                display: block;
+                color: white;
+            }
+        }
+    }
+
+    .front {
+        width: 90%;
+        height: 90%;
+        padding: 5%;
+        position: absolute;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.8), inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 2px 0px rgba(255, 255, 255, 0.1);
+        @include backface-visibility(hidden);
+        @include transition(all 1s ease);
+        z-index: 2000;
+    }
+
+    .back {
+        width: 90%;
+        height: 90%;
+        padding: 5%;
+        position: absolute;
+        overflow: hidden;
+        @include backface-visibility(hidden);
+        @include background(linear-gradient(-45deg, #4c4c4c 20%, #131313 70%));
+        @include transition(all 1s ease);
+        @include transform(rotatey(180deg));
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.8), inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 2px 0px rgba(255, 255, 255, 0.1);
+        z-index: 2000;
+    }
+    
+    &:hover .block {
+        @include transform(rotatey(180deg) translatex(-100%));
+        -moz-transform: rotatey(180deg) translatex(0%);
+        z-index: 3000; 
+        
+        .front {
+            color: transparent;
+            text-shadow: 0px 0px 0px transparent;
+            z-index: 3000;
+        }
+        
+        .back {
+            z-index: 4000; 
+        }
+    }
+}
+
+
+/**** Menu ****/
+
+#navWrapper {
+    width: 100%;
+    background-color: #980002;
+    @include box-shadow(0px 7px 15px rgba(0, 0, 0, 0.4));
+    margin-top: -50px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 3000;
+}
+
+nav#menu2 {
+    margin: 0 auto;
+    width: $menuWidth;
+    position: relative;    
+    @include background(linear-gradient(#e50207 0%,#c00204 50%,#a10002 51%,#cf0206 100%));
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e50207', endColorstr='#cf0206',GradientType=0 ); /* IE6-8 */
+}
+
+
+nav#menu2 ul li a {
+    color:#FFF;
+}
+
+nav#menu2 ul li a.active {
+    color: red;
+}
+
+.menu ul li.marker {
+    width: 150px;
+    height: 45px;
+    background-color: white;
+    display:list-item;
+    position: absolute; 
+    box-shadow:0 0 15px #ffffff; 
+}
+
+.menu { 
+    height: 45px;
+    display: block;
+}
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu ul li {
+    float: left;		
+    position: relative;
+    text-align: center;
+    line-height: 45px;
+}
+
+.menu ul li:last-child {
+    box-shadow: 3px 0px 4px -1px rgba(0, 0, 0, .3);
+}
+
+.menu ul li:nth-child(2) {
+    box-shadow: -3px 0px 4px -1px rgba(0, 0, 0, .3);
+}
+
+.menu ul li a { 
+    position: relative;
+    display: block;
+    width: 150px;
+    height: 45px;
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/**** Footer ****/
+
+footer {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    width: 100%; 
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    background-color: #c28224;
+    margin: 0;
+}
+
+footer ul:nth-child(1) {
+    margin-top: 16px;
+    background-color: #cdb200;
+}
+
+footer ul:nth-child(2) {
+    background-color: #cda000;
+}
+
+footer ul:nth-child(3) {
+    background-color: #bd7502;
+}
+
+footer li {
+    width: $menuWidth;
+    margin: 0 auto;
+}
+
+footer li a {
+    padding: 5px 20px;
+    vertical-align: middle;
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+footer ul:nth-child(1) li a {
+    background-color: #ffe500;
+}
+
+footer ul:nth-child(2) li a {
+    background-color: #ffba00;
+}
+
+footer ul:nth-child(3) li a {
+    background-color: #ff9d00;
+}
+
+footer ul li a:hover {
+    background-color: #c10009;
+}
+
+footer ul.active {
+    background-color: #840006;    
+}
+
+
+/**** Isotope Filtering ****/
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+.isotope,
+.isotope .isotope-item {
+          @include transition-duration(0.8s);
+}
+
+.isotope {
+          @include transition-property(height, width);
+}
+
+.isotope .isotope-item {
+          @include transition-property(transform, opacity);      
+}
+
+
+// /**** disabling Isotope CSS3 transitions ****/
+// 
+// .isotope.no-transition,
+// .isotope.no-transition .isotope-item,
+// .isotope .isotope-item.no-transition {
+//           @include transition-duration(0s);
+// }
