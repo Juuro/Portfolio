@@ -50,6 +50,25 @@ $(document).ready(function() {
         $(this).parent().removeClass('active');
     });
     
+    $('a[data-filter="*"]').click(function(){
+        $('#navWrapper').css('background-color', '#980002');
+    });
+
+    $('a[data-filter=".webdev"]').click(function(){
+        $('#navWrapper').css('background-color', '#e91348');
+    });
+    
+    $('a[data-filter=".scripts"]').click(function(){
+        $('#navWrapper').css('background-color', '#00c2f4');
+    });
+    
+    $('a[data-filter=".photo"]').click(function(){
+        $('#navWrapper').css('background-color', '#8b49ab');
+    });
+    
+    $('a[data-filter=".ps"]').click(function(){
+        $('#navWrapper').css('background-color', '#00cb66');
+    });
     
    
    

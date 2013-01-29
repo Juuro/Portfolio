@@ -28,8 +28,9 @@ html {
 }
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;    
+    font-family: "Source Sans Pro", sans-serif;    
     margin: 0;
+    background: url('../img/subtle_grunge.png');
 }
 
 
@@ -47,10 +48,20 @@ header {
                     0 4px 0 rgba(150,150,150,0.5),
                     0 9px 5px rgba(0,0,0,0.5);
         z-index: 2000;
+        @include transition(all 1s ease);
+        
+        &:hover {
+            top: 20px;
+            cursor: pointer;
+            text-shadow: 0 2px 3px rgba(40,41,42,0.6),
+                        0 4px 0 rgba(150,150,150,0.5),
+                        0 0px 25px rgba(233, 19, 72, 0.5);
+        }
     }
     
     h2 {
-        font: 180px "Young Love";
+        font: 180px "Young Love", "Miss Fajardose", "Edwardian Script ITC", serif;
+        font-weight: 100;
         text-shadow: 0px 0px 100px 
         rgba(0, 0, 0, 0.8);
         margin-top: -30px;
@@ -129,7 +140,7 @@ header {
             box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.8), inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 2px 0px rgba(255, 255, 255, 0.1);
             @include backface-visibility(hidden);
             @include transition(all 1s ease);
-            z-index: 2000;
+            z-index: 3000;
         }
     
         .back {
@@ -156,11 +167,11 @@ header {
             .front {
                 color: transparent;
                 text-shadow: 0px 0px 0px transparent;
-                z-index: 3000;
+                z-index: 4000;
             }
             
             .back {
-                z-index: 4000; 
+                z-index: 5000;
             }
         }
     }
@@ -177,76 +188,75 @@ header {
     margin-bottom: 20px;
     position: relative;
     z-index: 3000;
-}
-
-nav#menu2 {
-    margin: 0 auto;
-    width: $menuWidth;
-    position: relative;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e50207', endColorstr='#cf0206',GradientType=0 ); /* IE6-8 */   
-    @include background(linear-gradient(#e50207 0%,#c00204 50%,#a10002 51%,#cf0206 100%));
-}
-
-
-nav#menu2 ul li a {
-    color:#FFF;
-    @include transition(all 0.5s ease);
-}
-
-nav#menu2 ul li a.active {
-    color: red;    
-    text-shadow: 0px 1px 0px rgba(255, 255, 255, 1.0),  0px -1px 0px rgba(0, 0, 0, 0.1);
-}
-
-.menu ul li.marker {
-    width: 150px;
-    height: 45px;
-    background-color: white;
-    display:list-item;
-    position: absolute;
-    @include box-shadow(0 0 15px rgba(255,255,255,1), /* Exterior Shadow */
-                inset 0 1px rgba(255,255,255,0.7), /* Top light Line */
-                inset 0 15px rgba(255,255,255,0.4), /* Top Light Shadow */
-                inset 0 10px 20px rgba(255,255,255,0.25), /* Sides Light Shadow */
-                inset 0 -15px 30px rgba(0,0,0,0.2)); /* Dark Background */
-}
-
-.menu { 
-    height: 45px;
-    display: block;
-}
-.menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.menu ul li {
-    float: left;		
-    position: relative;
-    text-align: center;
-    line-height: 45px;
-}
-
-.menu ul li:last-child {
-    box-shadow: 3px 0px 4px -1px rgba(0, 0, 0, .3);
-}
-
-.menu ul li:nth-child(2) {
-    box-shadow: -3px 0px 4px -1px rgba(0, 0, 0, .3);
-}
-
-.menu ul li a { 
-    position: relative;
-    display: block;
-    width: 150px;
-    height: 45px;
-    font-family: Arial;
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
+    @include transition(all 1s ease);
+    
+    #menu {
+        height: 45px;
+        display: block;
+        margin: 0 auto;
+        width: $menuWidth;
+        position: relative;
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e50207', endColorstr='#cf0206',GradientType=0 ); /* IE6-8 */   
+        @include background(linear-gradient(#e50207 0%,#c00204 50%,#a10002 51%,#cf0206 100%));
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            
+            li {
+                float: left;		
+                position: relative;
+                text-align: center;
+                line-height: 45px;
+                
+                &:last-child {
+                    box-shadow: 3px 0px 4px -1px rgba(0, 0, 0, .3);
+                }
+                
+                &:nth-child(2) {
+                    box-shadow: -3px 0px 4px -1px rgba(0, 0, 0, .3);
+                }
+                
+                a {
+                    color: white;
+                    position: relative;
+                    display: block;
+                    width: 150px;
+                    height: 45px;
+                    font-family: Arial;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    cursor: pointer;
+                    @include transition(all 0.5s ease);
+                    
+                    &.active {
+                        color: red;    
+                        text-shadow: 0px 1px 0px rgba(255, 255, 255, 1.0),  
+                                    0px -1px 0px rgba(0, 0, 0, 0.1),
+                                    0 0px 15px rgba(233, 19, 72, 0.6);
+                    }
+                }
+                
+            
+                &.marker {
+                    width: 150px;
+                    height: 45px;
+                    background-color: white;
+                    display:list-item;
+                    position: absolute;
+                    @include box-shadow(0 0 15px rgba(255,255,255,1), /* Exterior Shadow */
+                                inset 0 1px rgba(255,255,255,0.7), /* Top light Line */
+                                inset 0 15px rgba(255,255,255,0.4), /* Top Light Shadow */
+                                inset 0 10px 20px rgba(255,255,255,0.25), /* Sides Light Shadow */
+                                inset 0 -15px 30px rgba(0,0,0,0.2)); /* Dark Background */
+                }
+            }
+        }
+    }
 }
 
 
@@ -257,61 +267,68 @@ footer {
     position: absolute;
     bottom: 0px;
     width: 100%; 
-}
+    @include transition(all 1s ease);
+    
+    ul {
+        list-style: none;
+        padding: 0;
+        background-color: #c28224;
+        margin: 0;
+        
+        &:nth-child(1) {
+            background-color: #cdb200;
 
-footer ul {
-    list-style: none;
-    padding: 0;
-    background-color: #c28224;
-    margin: 0;
-}
+            li a {
+                background-color: #ffe500;
+            } 
+        }
+        
+        &:nth-child(2) {
+            background-color: #cda000;
+            
+            li a {
+                background-color: #ffba00;
+            }
+        }
 
-footer ul:nth-child(1) {
-    margin-top: 16px;
-    background-color: #cdb200;
+        &:nth-child(3) {
+            background-color: #bd7502;
+            
+            li a {
+                background-color: #ff9d00;
+            }
+        }
+        
+        &:nth-child(4) {
+            background-color: #d35b03;
+            
+            li a {
+                background-color: #ff6e00;
+            }
+        }
+        
+        li {
+            width: $menuWidth;
+            margin: 0 auto;
+            
+            a {
+                padding: 5px 20px;
+                vertical-align: middle;
+                display: block;
+                text-decoration: none;
+                color: white;
+            }
+            
+            &:hover a {
+                background-color: #c10009;
+            }
+        }        
+        
+        &.active {
+            background-color: #840006;   
+        }
+    }
 }
-
-footer ul:nth-child(2) {
-    background-color: #cda000;
-}
-
-footer ul:nth-child(3) {
-    background-color: #bd7502;
-}
-
-footer li {
-    width: $menuWidth;
-    margin: 0 auto;
-}
-
-footer li a {
-    padding: 5px 20px;
-    vertical-align: middle;
-    display: block;
-    text-decoration: none;
-    color: white;
-}
-
-footer ul:nth-child(1) li a {
-    background-color: #ffe500;
-}
-
-footer ul:nth-child(2) li a {
-    background-color: #ffba00;
-}
-
-footer ul:nth-child(3) li a {
-    background-color: #ff9d00;
-}
-
-footer ul li a:hover {
-    background-color: #c10009;
-}
-
-footer ul.active {
-    background-color: #840006;    
-}
-
 
 /**** Isotope Filtering ****/
 
