@@ -350,59 +350,59 @@ footer {
     padding: 0;
     background-color: #c28224;
     margin: 0; }
-    /* line 278, ../sass/screen.scss */
+    /* line 282, ../sass/screen.scss */
     footer ul:nth-child(1) {
-      background-color: #cdb200; }
-      /* line 281, ../sass/screen.scss */
+      background-color: #e6d519; }
+      /* line 285, ../sass/screen.scss */
       footer ul:nth-child(1) li a {
-        background-color: #ffe500; }
-    /* line 286, ../sass/screen.scss */
+        background-color: #ffea00; }
+    /* line 290, ../sass/screen.scss */
     footer ul:nth-child(2) {
-      background-color: #cda000; }
-      /* line 289, ../sass/screen.scss */
+      background-color: #e6b319; }
+      /* line 294, ../sass/screen.scss */
       footer ul:nth-child(2) li a {
-        background-color: #ffba00; }
-    /* line 294, ../sass/screen.scss */
+        background-color: #ffbf00; }
+    /* line 299, ../sass/screen.scss */
     footer ul:nth-child(3) {
-      background-color: #bd7502; }
-      /* line 297, ../sass/screen.scss */
+      background-color: #e69119; }
+      /* line 303, ../sass/screen.scss */
       footer ul:nth-child(3) li a {
-        background-color: #ff9d00; }
-    /* line 302, ../sass/screen.scss */
+        background-color: #ff9500; }
+    /* line 308, ../sass/screen.scss */
     footer ul:nth-child(4) {
-      background-color: #d35b03; }
-      /* line 305, ../sass/screen.scss */
+      background-color: #e66f19; }
+      /* line 312, ../sass/screen.scss */
       footer ul:nth-child(4) li a {
-        background-color: #ff6e00; }
-    /* line 310, ../sass/screen.scss */
+        background-color: #ff6a00; }
+    /* line 317, ../sass/screen.scss */
     footer ul li {
       width: 750px;
       margin: 0 auto; }
-      /* line 314, ../sass/screen.scss */
+      /* line 321, ../sass/screen.scss */
       footer ul li a {
         padding: 5px 20px;
         vertical-align: middle;
         display: block;
         text-decoration: none;
         color: white; }
-      /* line 322, ../sass/screen.scss */
+      /* line 329, ../sass/screen.scss */
       footer ul li:hover a {
         background-color: #c10009; }
-    /* line 327, ../sass/screen.scss */
+    /* line 334, ../sass/screen.scss */
     footer ul.active {
       background-color: #840006; }
 
 /**** Isotope Filtering ****/
-/* line 335, ../sass/screen.scss */
+/* line 342, ../sass/screen.scss */
 .isotope-item {
   z-index: 2; }
 
-/* line 339, ../sass/screen.scss */
+/* line 346, ../sass/screen.scss */
 .isotope-hidden.isotope-item {
   z-index: 1; }
 
 /**** Isotope CSS3 transitions ****/
-/* line 345, ../sass/screen.scss */
+/* line 352, ../sass/screen.scss */
 .isotope,
 .isotope .isotope-item {
   -webkit-transition-duration: 0.8s;
@@ -410,14 +410,14 @@ footer {
   -o-transition-duration: 0.8s;
   transition-duration: 0.8s; }
 
-/* line 349, ../sass/screen.scss */
+/* line 356, ../sass/screen.scss */
 .isotope {
   -webkit-transition-property: height, width;
   -moz-transition-property: height, width;
   -o-transition-property: height, width;
   transition-property: height, width; }
 
-/* line 353, ../sass/screen.scss */
+/* line 360, ../sass/screen.scss */
 .isotope .isotope-item {
   -webkit-transition-property: -webkit-transform, opacity;
   -moz-transition-property: -moz-transform, opacity;

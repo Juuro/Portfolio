@@ -275,35 +275,42 @@ footer {
         background-color: #c28224;
         margin: 0;
         
-        &:nth-child(1) {
-            background-color: #cdb200;
+        $color: hsl(55, 100%, 50%);
+        $degrees: -10;
+        $desat: 20%;
+        
+        &:nth-child(1) {            
+            background-color: desaturate($color, $desat);
 
             li a {
-                background-color: #ffe500;
+                background-color: $color;
             } 
         }
         
         &:nth-child(2) {
-            background-color: #cda000;
+            $color: adjust-hue($color, $degrees);
+            background-color: desaturate($color, $desat);
             
             li a {
-                background-color: #ffba00;
+                background-color: $color;
             }
         }
 
         &:nth-child(3) {
-            background-color: #bd7502;
+            $color: adjust-hue($color, $degrees);
+            background-color: desaturate($color, $desat);
             
             li a {
-                background-color: #ff9d00;
+                background-color: $color;
             }
         }
         
         &:nth-child(4) {
-            background-color: #d35b03;
+            $color: adjust-hue($color, $degrees);
+            background-color: desaturate($color, $desat);
             
             li a {
-                background-color: #ff6e00;
+                background-color: $color;
             }
         }
         
