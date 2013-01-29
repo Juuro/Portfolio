@@ -104,12 +104,116 @@ header h2 {
   margin-top: -30px;
   z-index: 1000; }
 
-/* line 72, ../sass/screen.scss */
+/**** Menu ****/
+/* line 74, ../sass/screen.scss */
+#navWrapper {
+  width: 100%;
+  background-color: #980002;
+  -webkit-box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.4);
+  margin-top: -50px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 3000;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; }
+  /* line 84, ../sass/screen.scss */
+  #navWrapper.webdev {
+    background-color: #e91348; }
+  /* line 88, ../sass/screen.scss */
+  #navWrapper.scripts {
+    background-color: #00c2f4; }
+  /* line 92, ../sass/screen.scss */
+  #navWrapper.photo {
+    background-color: #8b49ab; }
+  /* line 96, ../sass/screen.scss */
+  #navWrapper.ps {
+    background-color: #00cb66; }
+  /* line 100, ../sass/screen.scss */
+  #navWrapper #menu {
+    height: 45px;
+    display: block;
+    margin: 0 auto;
+    width: 750px;
+    position: relative;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e50207', endColorstr='#cf0206',GradientType=0 );
+    /* IE6-8 */
+    background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U1MDIwNyIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjYzAwMjA0Ii8+PHN0b3Agb2Zmc2V0PSI1MSUiIHN0b3AtY29sb3I9IiNhMTAwMDIiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjZjAyMDYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e50207), color-stop(50%, #c00204), color-stop(51%, #a10002), color-stop(100%, #cf0206));
+    background: -webkit-linear-gradient(#e50207 0%, #c00204 50%, #a10002 51%, #cf0206 100%);
+    background: -moz-linear-gradient(#e50207 0%, #c00204 50%, #a10002 51%, #cf0206 100%);
+    background: -o-linear-gradient(#e50207 0%, #c00204 50%, #a10002 51%, #cf0206 100%);
+    background: linear-gradient(#e50207 0%, #c00204 50%, #a10002 51%, #cf0206 100%); }
+    /* line 109, ../sass/screen.scss */
+    #navWrapper #menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+      /* line 114, ../sass/screen.scss */
+      #navWrapper #menu ul li {
+        float: left;
+        position: relative;
+        text-align: center;
+        line-height: 45px; }
+        /* line 120, ../sass/screen.scss */
+        #navWrapper #menu ul li:last-child {
+          box-shadow: 3px 0px 4px -1px rgba(0, 0, 0, 0.3); }
+        /* line 124, ../sass/screen.scss */
+        #navWrapper #menu ul li:nth-child(2) {
+          box-shadow: -3px 0px 4px -1px rgba(0, 0, 0, 0.3); }
+        /* line 128, ../sass/screen.scss */
+        #navWrapper #menu ul li a {
+          color: white;
+          position: relative;
+          display: block;
+          width: 150px;
+          height: 45px;
+          font-family: Arial;
+          font-size: 11px;
+          font-weight: bold;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          text-decoration: none;
+          cursor: pointer;
+          -webkit-transition: all 0s ease;
+          -moz-transition: all 0s ease;
+          -o-transition: all 0s ease;
+          transition: all 0s ease; }
+          /* line 143, ../sass/screen.scss */
+          #navWrapper #menu ul li a.active {
+            color: red;
+            text-shadow: 0px 1px 0px white, 0px -1px 0px rgba(0, 0, 0, 0.1), 0 0px 15px rgba(233, 19, 72, 0.6);
+            background-color: white;
+            -webkit-box-shadow: 0 0 15px white, inset 0 1px rgba(255, 255, 255, 0.7), inset 0 15px rgba(255, 255, 255, 0.4), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0 0 15px white, inset 0 1px rgba(255, 255, 255, 0.7), inset 0 15px rgba(255, 255, 255, 0.4), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 15px white, inset 0 1px rgba(255, 255, 255, 0.7), inset 0 15px rgba(255, 255, 255, 0.4), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.2);
+            /* Dark Background */
+            -webkit-transition: all 2s ease;
+            -moz-transition: all 2s ease;
+            -o-transition: all 2s ease;
+            transition: all 2s ease; }
+        /* line 159, ../sass/screen.scss */
+        #navWrapper #menu ul li.marker {
+          width: 150px;
+          height: 45px;
+          background-color: white;
+          display: list-item;
+          position: absolute;
+          -webkit-box-shadow: 0 0 15px white, inset 0 1px rgba(255, 255, 255, 0.7), inset 0 15px rgba(255, 255, 255, 0.4), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.2);
+          -moz-box-shadow: 0 0 15px white, inset 0 1px rgba(255, 255, 255, 0.7), inset 0 15px rgba(255, 255, 255, 0.4), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 15px white, inset 0 1px rgba(255, 255, 255, 0.7), inset 0 15px rgba(255, 255, 255, 0.4), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.2);
+          /* Dark Background */ }
+
+/**** Content Blocks ****/
+/* line 178, ../sass/screen.scss */
 #blocksWrapper {
   position: relative;
   margin: 0px auto;
   padding: 15px 0px; }
-  /* line 77, ../sass/screen.scss */
+  /* line 183, ../sass/screen.scss */
   #blocksWrapper .cont {
     width: 160px;
     height: 160px;
@@ -117,35 +221,35 @@ header h2 {
     margin: 8px;
     display: inline-block;
     cursor: pointer; }
-    /* line 85, ../sass/screen.scss */
+    /* line 191, ../sass/screen.scss */
     #blocksWrapper .cont.scripts .front {
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#009ac2', endColorstr='#00c2f4');
       background: -webkit-linear-gradient(-45deg, #009ac2 20%, #00c2f4 70%);
       background: -moz-linear-gradient(-45deg, #009ac2 20%, #00c2f4 70%);
       background: -o-linear-gradient(-45deg, #009ac2 20%, #00c2f4 70%);
       background: linear-gradient(-45deg, #009ac2 20%, #00c2f4 70%); }
-    /* line 90, ../sass/screen.scss */
+    /* line 196, ../sass/screen.scss */
     #blocksWrapper .cont.webdev .front {
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b90f3a', endColorstr='#e91348');
       background: -webkit-linear-gradient(-45deg, #b90f3a 20%, #e91348 70%);
       background: -moz-linear-gradient(-45deg, #b90f3a 20%, #e91348 70%);
       background: -o-linear-gradient(-45deg, #b90f3a 20%, #e91348 70%);
       background: linear-gradient(-45deg, #b90f3a 20%, #e91348 70%); }
-    /* line 95, ../sass/screen.scss */
+    /* line 201, ../sass/screen.scss */
     #blocksWrapper .cont.photo .front {
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6d3987', endColorstr='#8b49ab');
       background: -webkit-linear-gradient(-45deg, #6d3987 20%, #8b49ab 70%);
       background: -moz-linear-gradient(-45deg, #6d3987 20%, #8b49ab 70%);
       background: -o-linear-gradient(-45deg, #6d3987 20%, #8b49ab 70%);
       background: linear-gradient(-45deg, #6d3987 20%, #8b49ab 70%); }
-    /* line 100, ../sass/screen.scss */
+    /* line 206, ../sass/screen.scss */
     #blocksWrapper .cont.ps .front {
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00984c', endColorstr='#00cb66');
       background: -webkit-linear-gradient(-45deg, #00984c 20%, #00cb66 70%);
       background: -moz-linear-gradient(-45deg, #00984c 20%, #00cb66 70%);
       background: -o-linear-gradient(-45deg, #00984c 20%, #00cb66 70%);
       background: linear-gradient(-45deg, #00984c 20%, #00cb66 70%); }
-    /* line 105, ../sass/screen.scss */
+    /* line 211, ../sass/screen.scss */
     #blocksWrapper .cont .block {
       width: 100%;
       height: 100%;
@@ -174,10 +278,10 @@ header h2 {
       font-weight: 600;
       text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3), 0px -1px 0px rgba(0, 0, 0, 0.3);
       z-index: 2000; }
-      /* line 119, ../sass/screen.scss */
+      /* line 225, ../sass/screen.scss */
       #blocksWrapper .cont .block p {
         display: none; }
-        /* line 122, ../sass/screen.scss */
+        /* line 228, ../sass/screen.scss */
         #blocksWrapper .cont .block p.active p {
           width: 90%;
           background-color: rgba(255, 0, 160, 0.6);
@@ -187,7 +291,7 @@ header h2 {
           padding: 5%;
           display: block;
           color: white; }
-    /* line 135, ../sass/screen.scss */
+    /* line 241, ../sass/screen.scss */
     #blocksWrapper .cont .front {
       width: 90%;
       height: 90%;
@@ -204,7 +308,7 @@ header h2 {
       -o-transition: all 1s ease;
       transition: all 1s ease;
       z-index: 3000; }
-    /* line 146, ../sass/screen.scss */
+    /* line 252, ../sass/screen.scss */
     #blocksWrapper .cont .back {
       width: 90%;
       height: 90%;
@@ -232,7 +336,7 @@ header h2 {
       transform: rotatey(180deg);
       box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.8), inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 2px 0px rgba(255, 255, 255, 0.1);
       z-index: 2000; }
-    /* line 161, ../sass/screen.scss */
+    /* line 267, ../sass/screen.scss */
     #blocksWrapper .cont:hover .block {
       -webkit-transform: rotatey(180deg) translatex(-100%);
       -moz-transform: rotatey(180deg) translatex(-100%);
@@ -242,167 +346,85 @@ header h2 {
       -moz-transform: rotatey(180deg) translatex(0%);
       -ms-transform: rotatey(180deg) translatex(0%);
       z-index: 3000; }
-      /* line 167, ../sass/screen.scss */
+      /* line 273, ../sass/screen.scss */
       #blocksWrapper .cont:hover .block .front {
         color: transparent;
         text-shadow: 0px 0px 0px transparent;
         z-index: 4000; }
-      /* line 173, ../sass/screen.scss */
+      /* line 279, ../sass/screen.scss */
       #blocksWrapper .cont:hover .block .back {
         z-index: 5000; }
 
-/**** Menu ****/
-/* line 183, ../sass/screen.scss */
-#navWrapper {
-  width: 100%;
-  background-color: #980002;
-  -webkit-box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.4);
-  margin-top: -50px;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 3000;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease; }
-  /* line 193, ../sass/screen.scss */
-  #navWrapper #menu {
-    height: 45px;
-    display: block;
-    margin: 0 auto;
-    width: 750px;
-    position: relative;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e50207', endColorstr='#cf0206',GradientType=0 );
-    /* IE6-8 */
-    background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U1MDIwNyIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjYzAwMjA0Ii8+PHN0b3Agb2Zmc2V0PSI1MSUiIHN0b3AtY29sb3I9IiNhMTAwMDIiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjZjAyMDYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
-    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e50207), color-stop(50%, #c00204), color-stop(51%, #a10002), color-stop(100%, #cf0206));
-    background: -webkit-linear-gradient(#e50207 0%, #c00204 50%, #a10002 51%, #cf0206 100%);
-    background: -moz-linear-gradient(#e50207 0%, #c00204 50%, #a10002 51%, #cf0206 100%);
-    background: -o-linear-gradient(#e50207 0%, #c00204 50%, #a10002 51%, #cf0206 100%);
-    background: linear-gradient(#e50207 0%, #c00204 50%, #a10002 51%, #cf0206 100%); }
-    /* line 202, ../sass/screen.scss */
-    #navWrapper #menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0; }
-      /* line 207, ../sass/screen.scss */
-      #navWrapper #menu ul li {
-        float: left;
-        position: relative;
-        text-align: center;
-        line-height: 45px; }
-        /* line 213, ../sass/screen.scss */
-        #navWrapper #menu ul li:last-child {
-          box-shadow: 3px 0px 4px -1px rgba(0, 0, 0, 0.3); }
-        /* line 217, ../sass/screen.scss */
-        #navWrapper #menu ul li:nth-child(2) {
-          box-shadow: -3px 0px 4px -1px rgba(0, 0, 0, 0.3); }
-        /* line 221, ../sass/screen.scss */
-        #navWrapper #menu ul li a {
-          color: white;
-          position: relative;
-          display: block;
-          width: 150px;
-          height: 45px;
-          font-family: Arial;
-          font-size: 11px;
-          font-weight: bold;
-          letter-spacing: 1px;
-          text-transform: uppercase;
-          text-decoration: none;
-          cursor: pointer;
-          -webkit-transition: all 0.5s ease;
-          -moz-transition: all 0.5s ease;
-          -o-transition: all 0.5s ease;
-          transition: all 0.5s ease; }
-          /* line 236, ../sass/screen.scss */
-          #navWrapper #menu ul li a.active {
-            color: red;
-            text-shadow: 0px 1px 0px white, 0px -1px 0px rgba(0, 0, 0, 0.1), 0 0px 15px rgba(233, 19, 72, 0.6); }
-        /* line 245, ../sass/screen.scss */
-        #navWrapper #menu ul li.marker {
-          width: 150px;
-          height: 45px;
-          background-color: white;
-          display: list-item;
-          position: absolute;
-          -webkit-box-shadow: 0 0 15px white, inset 0 1px rgba(255, 255, 255, 0.7), inset 0 15px rgba(255, 255, 255, 0.4), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.2);
-          -moz-box-shadow: 0 0 15px white, inset 0 1px rgba(255, 255, 255, 0.7), inset 0 15px rgba(255, 255, 255, 0.4), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 15px white, inset 0 1px rgba(255, 255, 255, 0.7), inset 0 15px rgba(255, 255, 255, 0.4), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.2);
-          /* Dark Background */ }
-
 /**** Footer ****/
-/* line 265, ../sass/screen.scss */
+/* line 289, ../sass/screen.scss */
 footer {
   display: block;
   position: absolute;
-  bottom: 0px;
+  bottom: -120px;
   width: 100%;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease; }
-  /* line 272, ../sass/screen.scss */
+  /* line 296, ../sass/screen.scss */
   footer ul {
     list-style: none;
     padding: 0;
     background-color: #c28224;
     margin: 0; }
-    /* line 282, ../sass/screen.scss */
+    /* line 307, ../sass/screen.scss */
     footer ul:nth-child(1) {
       background-color: #e6d519; }
-      /* line 285, ../sass/screen.scss */
+      /* line 310, ../sass/screen.scss */
       footer ul:nth-child(1) li a {
         background-color: #ffea00; }
-    /* line 290, ../sass/screen.scss */
+    /* line 315, ../sass/screen.scss */
     footer ul:nth-child(2) {
       background-color: #e6b319; }
-      /* line 294, ../sass/screen.scss */
+      /* line 319, ../sass/screen.scss */
       footer ul:nth-child(2) li a {
         background-color: #ffbf00; }
-    /* line 299, ../sass/screen.scss */
+    /* line 324, ../sass/screen.scss */
     footer ul:nth-child(3) {
       background-color: #e69119; }
-      /* line 303, ../sass/screen.scss */
+      /* line 328, ../sass/screen.scss */
       footer ul:nth-child(3) li a {
         background-color: #ff9500; }
-    /* line 308, ../sass/screen.scss */
+    /* line 333, ../sass/screen.scss */
     footer ul:nth-child(4) {
       background-color: #e66f19; }
-      /* line 312, ../sass/screen.scss */
+      /* line 337, ../sass/screen.scss */
       footer ul:nth-child(4) li a {
         background-color: #ff6a00; }
-    /* line 317, ../sass/screen.scss */
+    /* line 342, ../sass/screen.scss */
     footer ul li {
       width: 750px;
       margin: 0 auto; }
-      /* line 321, ../sass/screen.scss */
+      /* line 346, ../sass/screen.scss */
       footer ul li a {
         padding: 5px 20px;
         vertical-align: middle;
         display: block;
         text-decoration: none;
         color: white; }
-      /* line 329, ../sass/screen.scss */
+      /* line 354, ../sass/screen.scss */
       footer ul li:hover a {
         background-color: #c10009; }
-    /* line 334, ../sass/screen.scss */
+    /* line 359, ../sass/screen.scss */
     footer ul.active {
       background-color: #840006; }
 
 /**** Isotope Filtering ****/
-/* line 342, ../sass/screen.scss */
+/* line 367, ../sass/screen.scss */
 .isotope-item {
   z-index: 2; }
 
-/* line 346, ../sass/screen.scss */
+/* line 371, ../sass/screen.scss */
 .isotope-hidden.isotope-item {
   z-index: 1; }
 
 /**** Isotope CSS3 transitions ****/
-/* line 352, ../sass/screen.scss */
+/* line 377, ../sass/screen.scss */
 .isotope,
 .isotope .isotope-item {
   -webkit-transition-duration: 0.8s;
@@ -410,14 +432,14 @@ footer {
   -o-transition-duration: 0.8s;
   transition-duration: 0.8s; }
 
-/* line 356, ../sass/screen.scss */
+/* line 381, ../sass/screen.scss */
 .isotope {
   -webkit-transition-property: height, width;
   -moz-transition-property: height, width;
   -o-transition-property: height, width;
   transition-property: height, width; }
 
-/* line 360, ../sass/screen.scss */
+/* line 385, ../sass/screen.scss */
 .isotope .isotope-item {
   -webkit-transition-property: -webkit-transform, opacity;
   -moz-transition-property: -moz-transform, opacity;

@@ -69,6 +69,112 @@ header {
     }
 }
 
+/**** Menu ****/
+
+#navWrapper {
+    width: 100%;
+    background-color: #980002;
+    @include box-shadow(0px 7px 15px rgba(0, 0, 0, 0.4));
+    margin-top: -50px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 3000;
+    @include transition(all 1s ease);
+    
+    &.webdev {
+        background-color: #e91348;
+    }
+
+    &.scripts {
+        background-color: #00c2f4;
+    }
+    
+    &.photo {
+        background-color: #8b49ab;
+    }
+    
+    &.ps {
+        background-color: #00cb66;
+    }
+
+    #menu {
+        height: 45px;
+        display: block;
+        margin: 0 auto;
+        width: $menuWidth;
+        position: relative;
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e50207', endColorstr='#cf0206',GradientType=0 ); /* IE6-8 */   
+        @include background(linear-gradient(#e50207 0%,#c00204 50%,#a10002 51%,#cf0206 100%));
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                float: left;		
+                position: relative;
+                text-align: center;
+                line-height: 45px;
+
+                &:last-child {
+                    box-shadow: 3px 0px 4px -1px rgba(0, 0, 0, .3);
+                }
+
+                &:nth-child(2) {
+                    box-shadow: -3px 0px 4px -1px rgba(0, 0, 0, .3);
+                }
+
+                a {
+                    color: white;
+                    position: relative;
+                    display: block;
+                    width: 150px;
+                    height: 45px;
+                    font-family: Arial;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    cursor: pointer;
+                    @include transition(all 0s ease);
+
+                    &.active {
+                        color: red;    
+                        text-shadow: 0px 1px 0px rgba(255, 255, 255, 1.0),  
+                                    0px -1px 0px rgba(0, 0, 0, 0.1),
+                                    0 0px 15px rgba(233, 19, 72, 0.6);
+                        background-color: white;
+                        @include box-shadow(0 0 15px rgba(255,255,255,1), /* Exterior Shadow */
+                                    inset 0 1px rgba(255,255,255,0.7), /* Top light Line */
+                                    inset 0 15px rgba(255,255,255,0.4), /* Top Light Shadow */
+                                    inset 0 10px 20px rgba(255,255,255,0.25), /* Sides Light Shadow */
+                                    inset 0 -15px 30px rgba(0,0,0,0.2)); /* Dark Background */
+                        @include transition(all 2s ease);
+                    }
+                }
+
+
+                &.marker {
+                    width: 150px;
+                    height: 45px;
+                    background-color: white;
+                    display:list-item;
+                    position: absolute;
+                    @include box-shadow(0 0 15px rgba(255,255,255,1), /* Exterior Shadow */
+                                inset 0 1px rgba(255,255,255,0.7), /* Top light Line */
+                                inset 0 15px rgba(255,255,255,0.4), /* Top Light Shadow */
+                                inset 0 10px 20px rgba(255,255,255,0.25), /* Sides Light Shadow */
+                                inset 0 -15px 30px rgba(0,0,0,0.2)); /* Dark Background */
+                }
+            }
+        }
+    }
+}
+
+/**** Content Blocks ****/
+
 #blocksWrapper {
     position: relative;
     margin: 0px auto;
@@ -178,94 +284,12 @@ header {
 }
 
 
-/**** Menu ****/
-
-#navWrapper {
-    width: 100%;
-    background-color: #980002;
-    @include box-shadow(0px 7px 15px rgba(0, 0, 0, 0.4));
-    margin-top: -50px;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 3000;
-    @include transition(all 1s ease);
-    
-    #menu {
-        height: 45px;
-        display: block;
-        margin: 0 auto;
-        width: $menuWidth;
-        position: relative;
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e50207', endColorstr='#cf0206',GradientType=0 ); /* IE6-8 */   
-        @include background(linear-gradient(#e50207 0%,#c00204 50%,#a10002 51%,#cf0206 100%));
-        
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            
-            li {
-                float: left;		
-                position: relative;
-                text-align: center;
-                line-height: 45px;
-                
-                &:last-child {
-                    box-shadow: 3px 0px 4px -1px rgba(0, 0, 0, .3);
-                }
-                
-                &:nth-child(2) {
-                    box-shadow: -3px 0px 4px -1px rgba(0, 0, 0, .3);
-                }
-                
-                a {
-                    color: white;
-                    position: relative;
-                    display: block;
-                    width: 150px;
-                    height: 45px;
-                    font-family: Arial;
-                    font-size: 11px;
-                    font-weight: bold;
-                    letter-spacing: 1px;
-                    text-transform: uppercase;
-                    text-decoration: none;
-                    cursor: pointer;
-                    @include transition(all 0.5s ease);
-                    
-                    &.active {
-                        color: red;    
-                        text-shadow: 0px 1px 0px rgba(255, 255, 255, 1.0),  
-                                    0px -1px 0px rgba(0, 0, 0, 0.1),
-                                    0 0px 15px rgba(233, 19, 72, 0.6);
-                    }
-                }
-                
-            
-                &.marker {
-                    width: 150px;
-                    height: 45px;
-                    background-color: white;
-                    display:list-item;
-                    position: absolute;
-                    @include box-shadow(0 0 15px rgba(255,255,255,1), /* Exterior Shadow */
-                                inset 0 1px rgba(255,255,255,0.7), /* Top light Line */
-                                inset 0 15px rgba(255,255,255,0.4), /* Top Light Shadow */
-                                inset 0 10px 20px rgba(255,255,255,0.25), /* Sides Light Shadow */
-                                inset 0 -15px 30px rgba(0,0,0,0.2)); /* Dark Background */
-                }
-            }
-        }
-    }
-}
-
-
 /**** Footer ****/
 
 footer {
     display: block;
     position: absolute;
-    bottom: 0px;
+    bottom: -120px;
     width: 100%; 
     @include transition(all 1s ease);
     
@@ -276,6 +300,7 @@ footer {
         margin: 0;
         
         $color: hsl(55, 100%, 50%);
+        //$color: hsl(359, 98%, 75%);
         $degrees: -10;
         $desat: 20%;
         
