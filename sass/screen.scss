@@ -18,19 +18,24 @@ $experimental-support-for-khtml : true !default;
 
 @font-face { 
     font-family: 'Young Love'; 
-    src: url('../fonts/younglovees.ttf') format('truetype'); 
+    src: url('../fonts/younglovees.ttf') format('truetype');
 } 
 
 html {
-    @include box-shadow(0 0 200px rgba(0,0,0,0.9)  inset);
-    //overflow: hidden;
-    height: 100%
+    height: 100%;
 }
 
 body {
     font-family: "Source Sans Pro", sans-serif;    
     margin: 0;
     background: url('../img/subtle_grunge.png');
+}
+
+.vignette {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  @include box-shadow(0 0 200px rgba(0,0,0,0.9) inset);
 }
 
 
@@ -44,11 +49,17 @@ header {
 
     h1 {
         font: 600 normal 80px/90px "Helvetica Neue",Helvetica,sans-serif;
+        color: white;
         text-shadow: 0 2px 3px rgba(40,41,42,0.6),
                     0 4px 0 rgba(150,150,150,0.5),
                     0 9px 5px rgba(0,0,0,0.5);
         z-index: 2000;
         @include transition(all 1s ease);
+        
+        a {
+            text-decoration: none;
+            color: white;
+        }
         
         &:hover {
             top: 20px;
@@ -133,14 +144,15 @@ header {
                     height: 45px;
                     font-family: Arial;
                     font-size: 11px;
-                    font-weight: bold;
+                    font-weight: bolder;
+                    font-style: normal;
                     letter-spacing: 1px;
                     text-transform: uppercase;
                     text-decoration: none;
                     cursor: pointer;
                     @include transition(all 0s ease);
 
-                    &.active {
+                    &.active, &.active:hover {
                         color: red;    
                         text-shadow: 0px 1px 0px rgba(255, 255, 255, 1.0),  
                                     0px -1px 0px rgba(0, 0, 0, 0.1),
@@ -152,6 +164,14 @@ header {
                                     inset 0 10px 20px rgba(255,255,255,0.25), /* Sides Light Shadow */
                                     inset 0 -15px 30px rgba(0,0,0,0.2)); /* Dark Background */
                         @include transition(all 2s ease);
+                        
+                        
+                    }
+                    
+                    &:hover {
+                        //@include box-shadow(0 8px 3px -5px rgba(255,255,255,0.8)); /* Exterior Shadow */
+                        @include transition(all 0.2s ease);
+                        text-shadow:0px 0px 20px rgba(255,255,255,1), 0px 0px 15px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1);
                     }
                 }
 
@@ -394,3 +414,81 @@ footer {
 // .isotope .isotope-item.no-transition {
 //           @include transition-duration(0s);
 // }
+
+
+
+/**** Resume ****/
+
+#resumeWrapper {
+    width: $menuWidth;
+    margin: 20px auto;    
+    background: url('../img/subtle_grunge.png');
+    background-color: hsl(53, 100%, 60%);
+    @include box-shadow(0px 1px 5px rgba(0, 0, 0, 0.8), inset 0px -400px 100px rgba(255, 255, 255, 0.2), inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 2px 0px rgba(255, 255, 255, 0.1));
+    @include transform(rotatez(-1deg));
+    
+    .resume {
+        display: block;
+        padding: 20px;
+        color: hsl(241, 100%, 15%);
+        
+        text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.7),  
+                    0px -1px 0px rgba(0, 0, 0, 0.1);
+                    
+        a {
+            text-decoration: none;
+            color: hsl(359, 100%, 30%);
+            @include transition(all 0.5s ease);
+            
+            &:hover {
+                text-shadow: 0px 0px 5px hsl(359, 100%, 30%);
+            }
+        }
+        
+        h3 {
+            font-size: 60px; 
+            font-weight: 600;  
+        }
+        
+        h4 {
+            font-size: 30px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        
+        img#portrait {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            @include transform(rotatez(5deg));
+            height: 260px;
+            width: 195px;
+            border: solid 10px white;
+            @include box-shadow(0px 1px 5px rgba(0, 0, 0, 0.8));
+        }
+        
+        table {
+            font-size: 20px;
+            line-height: 1.2em;
+            
+            tr {
+                td, th {
+                    vertical-align: top;
+                    padding: 5px 10px;
+                    
+                    &:nth-child(1) {
+                        width: 200px;
+                    }
+                }
+                
+                th {
+                    font-weight: bold;
+                }               
+            }
+            
+            &:last-child {
+                margin-top: 40px;
+            }
+        }
+    }
+}

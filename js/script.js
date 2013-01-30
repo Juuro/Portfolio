@@ -83,8 +83,8 @@ $(document).ready(function() {
                
            }
            else if (selector === '') {
-               window.console.log('bam');
-               $('#navWrapper li:nth-child(2) a').addClass('active');
+               //$('#navWrapper li:nth-child(2) a').addClass('active');
+               $('.marker').css('display', 'none');
            }
         });
         
@@ -99,16 +99,13 @@ $(document).ready(function() {
             clearTimeout(this.id);
             this.id = setTimeout(doneResizing, 1000);
         });
-    });
-    
+    });    
     
     $('.block').hover(function(){
         $(this).addClass('flip');
     },function(){
         $(this).removeClass('flip');
-    });
-    
-    
+    });    
     
     function doneResizing(){
         var hDocument = $('body').height(); // get the height of your content
