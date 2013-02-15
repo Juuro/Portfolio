@@ -31,7 +31,7 @@
     </header>
 
     <section id="navWrapper">
-        <nav id="menu" class="menu gradient">
+        <nav id="menu" class="menu gradient" role="navigation">
             <ul>
                 <li class="marker"></li>
                 <li class="item"><a href="index.html#all" data-filter="*">All</a></li>
@@ -47,7 +47,14 @@
         <div class="resume">
             <h3>Resume</h3>
             
-            <img src="img/portrait.jpg" id="portrait">
+            <div class="download">
+                <a href="files/resume.pdf">
+                    <div class="fs1 icon" aria-hidden="true" data-icon="&#xe000;"></div>
+                    <div class="text">download<br>resume</div>
+                </a>
+            </div>            
+            
+            <img src="img/portrait.jpg" id="portrait" alt="Portrait Sebastian Engel">
             
             <h4>Personal Information</h4>
             <table>
@@ -155,12 +162,11 @@
                 </tr>
                 <tr>
                     <th>Computer literacy</th>
-                    <td>Mac OS X, Windows, Linux, Unix, iOS, WindowsPhone, iWork, MS Office, Photoshop, Xcode</td>
+                    <td>Mac OS X, Windows, Linux, Unix, iOS, WindowsPhone, iWork, MS Office, Photoshop, Xcode</td>
                 </tr>
                 <tr>
                     <th>Programming languages and technologies</th>
-                    <td>Ruby, PHP, JavaScript, Java, Perl, Objective-C, MySQL, Markdown, (X)HTML 5, CSS 3, jQuery, Mootools, Twitter Bootstrap, HTML5 Boilerplate, JSON, XML, WordPress, phpBB, Joomla, Drupal, RedDot, Contao, LaTeX,
-Git, SVN, Mercurial</td>
+                    <td>Ruby, PHP, JavaScript, Java, Perl, Objective-C, MySQL, Markdown, (X)HTML 5, CSS 3, jQuery, Mootools, Twitter Bootstrap, HTML5 Boilerplate, JSON, XML, WordPress, phpBB, Joomla, Drupal, RedDot, Contao, LaTeX, Git, SVN, Mercurial</td>
                 </tr>
                 <tr>
                     <th>Interests</th>
@@ -169,6 +175,8 @@ Git, SVN, Mercurial</td>
             </table>
         </div>
     </section>
+
+    
 
     <footer>
         <ul>
@@ -188,7 +196,7 @@ Git, SVN, Mercurial</td>
     <script type="text/javascript" src="js/jquery-latest.pack.js"></script>
     <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
     <script type="text/javascript" src="js/isotope.min.js"></script>
-    <script type="text/javascript" src="js/script.min.js"></script>   
+    <script type="text/javascript" src="js/script.js"></script>   
 
 </body>
 </html>

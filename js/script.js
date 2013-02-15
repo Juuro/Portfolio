@@ -4,12 +4,21 @@ $(document).ready(function() {
         $(':animated').promise().done(function(){
             
             checkHash();
+            getBottomDownload();
              
             setTimeout(function() {
                 doneResizing();
             }, 1000);
         });
     });
+    
+    /**** show download ****/
+    // $('.resume').hover(function() {
+    //     $('.resume .download').css('display', 'block');
+    // },
+    // function(){
+    //     $('.resume .download').hide();
+    // });
     
     $('.block').hover(function() {
         $(this).addClass('active');
@@ -99,13 +108,17 @@ $(document).ready(function() {
             clearTimeout(this.id);
             this.id = setTimeout(doneResizing, 1000);
         });
+        
+        getBottomDownload();
     });    
     
     $('.block').hover(function(){
         $(this).addClass('flip');
     },function(){
         $(this).removeClass('flip');
-    });    
+    });  
+    
+     
     
     function doneResizing(){
         var hDocument = $('body').height(); // get the height of your content
@@ -132,4 +145,79 @@ $(document).ready(function() {
         }
         $('footer').css('bottom', '0');
     }
+    
+    /**** resume download scroll ****/
+    
+    $(window).scroll(function() {
+        getBottomDownload();
+    });
+    
+    function getBottomDownload() {
+        var resumeHeight = $('#resumeWrapper').height();
+        var windowHeight = $(window).height();
+        var headerHeight = $('header').height();
+        var navHeight = $('#navWrapper').height();
+        var resumeBottom = headerHeight+navHeight+resumeHeight;
+        var dist = 20;
+        var scrolled = getScrollY();        
+        var bottom;        
+        
+        if (windowHeight > resumeBottom) {
+            bottom = dist;
+        } 
+        else if (windowHeight < resumeBottom)  {
+            bottom = ((resumeBottom-windowHeight)+dist)-scrolled;
+        }   
+        
+        if (bottom<0){
+            bottom = dist;
+        }
+        
+        $('.download').css('bottom',bottom+'px');
+    }
+    
+    function getScrollY() {
+        var scrOfX = 0, scrOfY = 0;
+    
+        if( typeof( window.pageYOffset ) == 'number' ) {
+            //Netscape compliant
+            scrOfY = window.pageYOffset;
+        } else if( document.body && document.body.scrollTop ) {
+            //DOM compliant
+            scrOfY = document.body.scrollTop;
+        } else if( document.documentElement && document.documentElement.scrollTop ) {
+            //IE6 standards compliant mode
+            scrOfY = document.documentElement.scrollTop;
+        }
+        return scrOfY;
+    }
+    
+    
+    
+    $("label.inlined + .input-text").each(function (type) {
+    
+        $(window).bind('load', function () {
+            setTimeout(function(){
+                if (!input.value.empty()) {
+                    input.previous().addClassName('has-text');
+                }
+            }, 200);
+        });
+                
+        $(this).focus(function () {
+            $(this).prev("label.inlined").addClass("focus");
+        });
+                
+        $(this).keypress(function () {
+            $(this).prev("label.inlined").addClass("has-text").removeClass("focus");
+        });
+                
+        $(this).blur(function () {
+            if($(this).val() === "") {
+                $(this).prev("label.inlined").removeClass("has-text").removeClass("focus");
+            }
+        });
+    });
+    
+    
 });
