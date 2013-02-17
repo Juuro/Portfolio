@@ -48,19 +48,12 @@
             <h3>Contact</h3>
             
             <form action="" method="post">
-                
-                <label for="name" class="inlined">Name </label>
-                <input name="name" id="name" type="text" tabindex="1" class="input-text">
-            
-                <label for="email" class="inlined">E-Mail </label>
-                <input name="email" id="email" type="text" tabindex="2" class="input-text">                        
-            
-                <label for="text" class="inlined">Text </label>
-                <textarea cols="40" rows="8" name="text" id="text" tabindex="3" class="input-text"></textarea>                        
-            
-                <input type="submit" value="Submit">                
-                
+                <input name="name" placeholder="What is your name?" class="name" required />
+                <input name="emailaddress" placeholder="What is your email?" class="email" type="email" required />
+                <textarea rows="4" cols="50" name="subject" placeholder="Please enter your message" class="message" required></textarea>
+                <input name="submit" class="btn" type="submit" value=">" />
             </form>
+            
         </div>
     </section>
 
