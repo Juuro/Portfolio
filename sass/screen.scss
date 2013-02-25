@@ -472,6 +472,12 @@ footer {
             }
         }
         
+        .icons {
+            position: absolute;
+            left: 250px;
+            top: 50px;
+        }
+        
         .download {
             font-size: 60px;          
             @include transition(color 1s ease, background-color 1s ease);
@@ -568,7 +574,7 @@ footer {
     position: relative;
     width: $menuWidth;
     margin: 20px auto;    
-    background: url('../img/ladybug.png');
+    background: url('../img/ladybug.jpg');
     background-size: 100%;
     // background-color: hsl(53, 100%, 60%);
     @include box-shadow(0px 1px 5px rgba(0, 0, 0, 0.8), inset 0px -400px 100px rgba(255, 255, 255, 0.2), inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 2px 0px rgba(255, 255, 255, 0.1));
@@ -579,6 +585,33 @@ footer {
         color: hsl(241, 100%, 15%);        
         text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.7),  
                     0px -1px 0px rgba(0, 0, 0, 0.1);
+        // text-align: center;
+                    
+        .alert {
+            background: hsla(150, 100%, 40%, 0.7);
+            border: 1px solid hsla(150, 100%, 30%, 0.7);
+            text-shadow: none;
+            padding: 10px;
+            width: 200px;
+            margin: auto auto;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0px 0px 10px -2px black;
+            text-align: center;
+            @include transition(all 300ms ease-in-out);
+            position: absolute;
+            top: 405px;
+            left: 203px;
+            // left: 50%;
+            // margin-left: -100px;
+            z-index: 7;
+            color: white;
+            
+            &.error {
+                background-color: hsla(359, 98%, 41%, 0.5);
+                border: 1px solid hsla(359, 100%, 30%, 0.5);
+            }
+        }
                     
         form {
             margin-left:auto;
@@ -595,7 +628,7 @@ footer {
             background-clip: padding-box;
             background: linear-gradient(top,rgba(255, 255, 255, 0.1) 30%,rgba(0,0,0,.3) 60%);
             // box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
-            overflow: hidden; 
+            overflow: hidden;
         }
         
         textarea{
@@ -618,9 +651,31 @@ footer {
             padding-top:12px;
             margin-bottom:20px;
             overflow:hidden;
+            position: relative;
+            z-index: 6;
+        }
+        
+        label {
+            position: absolute;
+            left: 20px;
+            margin-top: -69px;
+            padding: 10px;
+            display: block;
+            width: 162px;
+            background: hsla(359, 98%, 41%, 0.5);
+            border: 1px solid hsla(359, 100%, 30%, 0.5);
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            color: white;
+            text-shadow: none;
+            z-index: 5;
+            font-size: 12px; 
+            @include transition(all 100ms ease-in);           
         }
         
         input {
+            position: relative;
+            z-index: 6;
             width: 276px;
             height: 48px;
             border: 1px solid rgba(255,255,255,.6);
@@ -646,7 +701,7 @@ footer {
                 padding-left:45px;
             }
         
-            &.email {
+            &.emailaddress {
                 background: rgba(180, 180, 180, 0.3) url(http://estudio87.com/img/gemicon_email.png) no-repeat scroll 16px 20px;
                 padding-left:45px;
             }
@@ -707,5 +762,109 @@ footer {
             font-weight: 600;  
         }
         
+    }
+}
+
+/**** Sources ****/
+
+#sourcesWrapper {
+    position: relative;
+    width: $menuWidth;
+    margin: 20px auto;    
+    background: url('../img/subtle_grunge.png');
+    background-color: hsla(221, 100%, 80%, .5);
+    background-size: 100%;
+    // background-color: hsl(53, 100%, 60%);
+    @include box-shadow(0px 1px 5px rgba(0, 0, 0, 0.8), inset 0px -400px 100px rgba(255, 255, 255, 0.2), inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 2px 0px rgba(255, 255, 255, 0.1));
+    
+    .sources {
+        display: block;
+        padding: 20px;
+        color: hsl(241, 100%, 15%);        
+        text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.7),  
+                    0px -1px 0px rgba(0, 0, 0, 0.1);
+                    
+        h3 {
+            font-size: 60px; 
+            font-weight: 600; 
+            margin-bottom: 30px; 
+        }
+        
+        ul {
+          
+            li {
+                display: block;
+                border: 1px white solid;
+                border-radius: 5px;
+                margin-bottom: 5px;
+                background-color: hsla(0, 0%, 0%, 0.2);
+                cursor: move;
+                text-shadow: none;
+                
+                &:focus {
+                  background: hsla(0, 0%, 0%, 0.3);
+                }
+                
+                &:hover {
+                  background: hsla(0, 0%, 0%, 0.4);
+                  
+                  &:after {
+                    content: "\e018";
+                    font-family: 'icomoon';
+                    font-weight: 100;
+                    color: hsl(0, 0%, 100%);
+                    position: absolute;
+                    right: 21px;
+                    border-left: 1px white solid;
+                    padding: 12px;
+                    margin-top: -40px;
+                    border-radius: 0 5px 5px 0;
+                    @include background(linear-gradient(left, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.4) 100%));                    
+                  }
+                }
+                
+                
+                
+                a {
+                  color: white;
+                  text-decoration: none;
+                  font-size: 20px;
+                  display: block;
+                  padding: 10px;
+                  
+                  
+                  &:hover {
+                  
+                      
+                    }
+                }
+            }  
+        }
+    }
+}
+
+/**** Imprint ****/
+
+#imprintWrapper {
+position: relative;
+width: $menuWidth;
+margin: 20px auto;    
+background: url('../img/subtle_grunge.png');
+background-color: hsla(21, 100%, 80%, .5);
+background-size: 100%;
+@include box-shadow(0px 1px 5px rgba(0, 0, 0, 0.8), inset 0px -400px 100px rgba(255, 255, 255, 0.2), inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 2px 0px rgba(255, 255, 255, 0.1));
+
+    .imprint {
+        display: block;
+        padding: 20px;
+        color: hsl(241, 100%, 15%);        
+        text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.7),  
+                    0px -1px 0px rgba(0, 0, 0, 0.1);
+                    
+        h3 {
+            font-size: 60px; 
+            font-weight: 600; 
+            margin-bottom: 30px; 
+        }
     }
 }

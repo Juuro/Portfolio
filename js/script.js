@@ -220,4 +220,63 @@ $(document).ready(function() {
     });
     
     
+    
+    $('#contactWrapper form').submit(function() {
+         
+        $.ajax({
+            url: "./php/send.php",
+            data: "name=" + $(".name").val() + "&emailaddress=" + $(".emailaddress").val() + "&message=" + $(".message").val(),
+            type: "POST",
+            success: function(data) {
+            
+                var $message;
+                if (JSON.parse(data) !== true) {                     
+                    $message = "<div class=\"alert error\" style=\"opacity: 0\">There's something wrong!</div>";                    
+                    showAlert($message);                   
+                }
+                else {                
+                    $message = "<div class=\"alert\" style=\"opacity: 0\">Message sent successfully!</div>";
+                    showAlert($message);
+                    $('#contactWrapper form input[type=\"text\"]').val("");
+                    $('#contactWrapper form input[type=\"email\"]').val("");
+                    $('#contactWrapper form textarea').val("");
+                }
+            }
+        });
+        
+        return false;
+    });
+    
+    function showAlert($message) {
+        console.log($('.alert').length);        
+        
+        if ($('.alert').length !== 0) {
+            console.log('Alert gibts schon!');
+            $('.alert').replaceWith( $message );
+        }
+        else {
+            $('.contact').append( $message );                        
+        }
+        $('.alert').animate({'opacity': '1'}).delay(5000).animate({'opacity': '0'}).delay(1000).animate({'opacity': '0'}, {
+                                                            duration: 1000,
+                                                            step: function(){
+                                                              $(this).remove();
+                                                            }
+                                                        });
+    }
+    
+    
+    // remove autofill mark in Safari and Chrome
+    if(navigator.userAgent.toLowerCase().indexOf("chrome") >= 0 || navigator.userAgent.toLowerCase().indexOf("safari") >= 0){
+        window.setInterval(function(){
+            $('input:-webkit-autofill').each(function(){
+                var clone = $(this).clone(true, true);
+                $(this).after(clone).remove();
+            });
+        }, 20);
+    }
+    
+    $('#contactWrapper form').validate();
+    
+    
 });
