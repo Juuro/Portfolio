@@ -493,8 +493,13 @@ footer {
         
         .icons {
             position: absolute;
-            left: 250px;
-            top: 50px;
+            right: 5px;
+            top: 310px;
+            width: 105px;
+            
+            a, iframe {
+                float: right;
+            }
         }
         
         .download {

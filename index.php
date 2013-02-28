@@ -44,6 +44,16 @@
     </section>
     
     <section id="blocksWrapper">
+        
+        <?php
+        
+        include 'php/deviantart.php';    
+        
+        ?>
+        
+        
+        
+        
         <div class="cont scripts">
             <div class="block">
                 <div class="front gradient">FRONT</div>
