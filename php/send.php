@@ -8,7 +8,6 @@ $message = check_input($_POST["message"]);
 
 $to = "portfolio@sebastian-engel.de";
 $subject = "Mail from ".$name;
-$message;
 
 $extra = "From: $name <$emailaddress>\n";
 

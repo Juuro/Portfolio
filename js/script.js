@@ -265,7 +265,6 @@ $(document).ready(function() {
                                                         });
     }
     
-    
     // remove autofill mark in Safari and Chrome
     if(navigator.userAgent.toLowerCase().indexOf("chrome") >= 0 || navigator.userAgent.toLowerCase().indexOf("safari") >= 0){
         window.setInterval(function(){
@@ -276,7 +275,6 @@ $(document).ready(function() {
         }, 20);
     }
     
-    $('#contactWrapper form').validate();
-    
+    $('#contactWrapper form').attr('action', 'php/send.php');
     
 });
