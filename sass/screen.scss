@@ -16,6 +16,7 @@ $experimental-support-for-opera : true !default;
 $experimental-support-for-microsoft : true !default;
 $experimental-support-for-khtml : true !default;
 
+/**** fonts ****/
 @font-face { 
     font-family: 'Young Love'; 
     src: url('../fonts/younglovees.ttf') format('truetype');
@@ -35,6 +36,7 @@ $experimental-support-for-khtml : true !default;
     font-style: normal;
 }
 
+/**** font icons ****/
 [data-icon]:before {
     font-family: 'icomoon';
     content: attr(data-icon);
@@ -44,6 +46,7 @@ $experimental-support-for-khtml : true !default;
     -webkit-font-smoothing: antialiased;
 }
 
+/**** actual stylesheets ****/
 html {
     height: 100%;
     // -webkit-font-smoothing: antialiased;
