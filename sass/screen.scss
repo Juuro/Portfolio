@@ -263,11 +263,19 @@ header {
         &.photo .front {
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6d3987', endColorstr='#8b49ab');
             @include background(linear-gradient(-45deg, #6d3987 20%, #8b49ab 70%));
+            
+            h3 {
+                display: none;
+            }
         }
         
         &.ps .front {
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00984c', endColorstr='#00cb66');
             @include background(linear-gradient(-45deg, #00984c 20%, #00cb66 70%));
+            
+            h3 {
+                display: none;
+            }
         }
     
         .block {
@@ -324,6 +332,12 @@ header {
             @include transform(rotatey(180deg));
             box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.8), inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 2px 0px rgba(255, 255, 255, 0.1);
             z-index: 2000;
+            
+            a {
+                color: hsl(0, 0%, 81%);
+                font-size: 12px;
+                font-weight: 400;
+            }
         }
         
         &:hover .block {

@@ -25,6 +25,14 @@ function deviantart($filename) {
     foreach ($jsonIterator as $key => $val) {
         $url = $oembedUrl.$val;
         
+        // picture cached?
+        if (true){
+            
+        }
+        else {
+            
+        }
+        
         $photo = json_decode(get_data($url), true);
         $photoUrl = $photo["thumbnail_url"];
         $photoTitle = $photo["title"];
@@ -45,9 +53,10 @@ $html = <<< EOT
 <div class="cont $filename">
     <div class="block">
         <div class="front gradient" style="background:url('$photoUrl'); background-size: $backgroundSize; background-position: center; background-repeat:no-repeat;">
-            $photoTitle
+            
         </div>
         <div class="back gradient">
+            <h3>$photoTitle</h3>
             <a href="$val">$val</a>
         </div>
     </div>
