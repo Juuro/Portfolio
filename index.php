@@ -49,7 +49,8 @@
         
         include 'php/functions.php';  
         
-        $blocksArray = array_merge(photo(), ps()); 
+        // $blocksArray = array_merge(photo(), ps()); 
+        $blocksArray = array_merge(webdev(), scripts(), photo(), ps()); 
         shuffle($blocksArray);
         
         foreach($blocksArray as $key => $value) {
@@ -61,48 +62,7 @@
         
         
         
-        <div class="cont scripts">
-            <div class="block">
-                <div class="front gradient">FRONT</div>
-                <div class="back gradient">BACK</div>
-            </div>
-        </div>
-        <div class="cont webdev">            
-            <div class="block">
-                <div class="front gradient">CSS3</div>
-                <div class="back gradient">BACK</div>
-            </div> 
-        </div>
-        <div class="cont scripts">            
-            <div class="block">
-                <div class="front gradient">... on Rails</div>
-                <div class="back gradient">BACK</div>
-            </div> 
-        </div>
-        <div class="cont webdev">            
-            <div class="block">
-                <div class="front gradient">Was mit Medien.</div>
-                <div class="back gradient">BACK</div>
-            </div> 
-        </div>
-        <div class="cont webdev">            
-            <div class="block">
-                <div class="front gradient">PHP und so.</div>
-                <div class="back gradient">BACK</div>
-            </div> 
-        </div>   
-        <div class="cont scripts">            
-            <div class="block">
-                <div class="front gradient">Ruby</div>
-                <div class="back gradient">BACK</div>
-            </div> 
-        </div>
-        <div class="cont webdev">
-            <div class="block">
-                <div class="front gradient">HTML5</div>
-                <div class="back gradient">BACK</div>
-            </div>
-        </div>
+        
     </section>
     
     <noscript>

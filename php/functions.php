@@ -1,6 +1,14 @@
 <?php
 
+function webdev() {
+    $filename = "webdev";
+    return github($filename);
+}
 
+function scripts() {
+    $filename = "scripts";
+    return github($filename);
+}
 
 function photo() {
     $filename = "photo";
@@ -10,6 +18,43 @@ function photo() {
 function ps() {
     $filename = "ps";
     return deviantart($filename);
+}
+
+function github($filename){
+    $githubAuth = "?client_id=01a4c8a1b5de89a35313&client_secret=16d581468ffadf0137de5f790985c69622eae9e9";
+    $string = file_get_contents("files/".$filename.".json");
+    $blocksArray = array();
+    
+    $jsonIterator = new RecursiveIteratorIterator(
+    new RecursiveArrayIterator(json_decode($string, TRUE)),
+    RecursiveIteratorIterator::SELF_FIRST);
+    
+    foreach ($jsonIterator as $key => $val) {
+        $url = $val.$githubAuth;        
+        $repo = json_decode(get_data($url), true);
+        
+        if (!isset($repo['message']) || $repo['message'] != 'Not Found') {            
+            $repoName = $repo['name'];
+        
+$html = <<< EOT
+<div class="cont $filename">
+    <div class="block">
+        <div class="front gradient">
+            <h3>$repoName</h3>
+        </div>
+        <div class="back gradient">
+            <h3></h3>
+            <a href=""></a>
+        </div>
+    </div>
+</div>
+EOT;
+        
+                $blocksArray[] = $html;
+        }
+    }
+    
+    return $blocksArray;
 }
 
 function deviantart($filename) {
@@ -68,7 +113,6 @@ EOT;
         $i++;
     }
     
-    shuffle($blocksArray);
     return $blocksArray;
 }
 
