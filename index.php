@@ -47,7 +47,14 @@
         
         <?php
         
-        include 'php/deviantart.php';    
+        include 'php/functions.php';  
+        
+        $blocksArray = array_merge(photo(), ps()); 
+        shuffle($blocksArray);
+        
+        foreach($blocksArray as $key => $value) {
+            echo $value;
+        }
         
         ?>
         
@@ -57,12 +64,6 @@
         <div class="cont scripts">
             <div class="block">
                 <div class="front gradient">FRONT</div>
-                <div class="back gradient">BACK</div>
-            </div>
-        </div>
-        <div class="cont photo">
-            <div class="block">
-                <div class="front gradient">Cameraßüäö</div>
                 <div class="back gradient">BACK</div>
             </div>
         </div>
@@ -78,12 +79,6 @@
                 <div class="back gradient">BACK</div>
             </div> 
         </div>
-        <div class="cont ps">            
-            <div class="block">
-                <div class="front gradient">Pixelmator ...</div>
-                <div class="back gradient">... FTW!!!!11</div>
-            </div> 
-        </div>
         <div class="cont webdev">            
             <div class="block">
                 <div class="front gradient">Was mit Medien.</div>
@@ -95,19 +90,7 @@
                 <div class="front gradient">PHP und so.</div>
                 <div class="back gradient">BACK</div>
             </div> 
-        </div>        
-        <div class="cont ps">            
-            <div class="block">
-                <div class="front gradient">Photoshop ....</div>
-                <div class="back gradient">... is out!</div>
-            </div> 
-        </div>
-        <div class="cont photo">            
-            <div class="block">
-                <div class="front gradient">Baar Bildle.</div>
-                <div class="back gradient">BACK</div>
-            </div> 
-        </div>
+        </div>   
         <div class="cont scripts">            
             <div class="block">
                 <div class="front gradient">Ruby</div>
@@ -120,12 +103,6 @@
                 <div class="back gradient">BACK</div>
             </div>
         </div>
-        <div class="cont photo">            
-            <div class="block">
-                <div class="front gradient">Scheene Foddos.</div>
-                <div class="back gradient">BACK</div>
-            </div>   
-        </div> 
     </section>
     
     <noscript>
