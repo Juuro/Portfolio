@@ -1,0 +1,54 @@
+{
+  "resultCount": 1,
+  "results": [
+    {
+      "kind": "software",
+      "features": [],
+      "supportedDevices": [
+        "all"
+      ],
+      "isGameCenterEnabled": false,
+      "screenshotUrls": [
+        "http://a1703.phobos.apple.com/us/r1000/074/Purple/v4/2f/b5/c9/2fb5c9d2-cbe9-255d-5aa5-0367fad46fd2/eXppqQbkoaO8ljaCH8Pyf0-temp-upload.azhtuxup.png",
+        "http://a1677.phobos.apple.com/us/r1000/118/Purple/v4/ca/04/79/ca047979-94f2-1344-7863-0837a257ec98/eXppqQbkoaO8ljaCH8Pyf0-temp-upload.lholsnsz.png",
+        "http://a1635.phobos.apple.com/us/r1000/072/Purple/v4/4b/93/91/4b9391c7-cd29-7539-b8b2-81d2950e2a88/eXppqQbkoaO8ljaCH8Pyf0-temp-upload.rumzazbe.png"
+      ],
+      "ipadScreenshotUrls": [],
+      "artworkUrl60": "http://a1216.phobos.apple.com/us/r1000/082/Purple/v4/1f/87/f9/1f87f99a-f6ee-a445-4c97-5b567386bf14/bell_red-57.png",
+      "artworkUrl512": "http://a79.phobos.apple.com/us/r1000/104/Purple/v4/d6/cf/fc/d6cffc1a-a48e-5d23-9a3f-741963ba46df/eXppqQbkoaO8ljaCH8Pyf0-temp-upload.rtakdzkl.png",
+      "artistViewUrl": "https://itunes.apple.com/us/artist/sebastian-engel/id517454637?uo=4",
+      "artistId": 517454637,
+      "artistName": "Sebastian Engel",
+      "price": 0.99,
+      "version": "1.0.0",
+      "description": "iMindU is a small helper tool for fast adding a reminder to the iPhone calendar. iMindU doesn't use an own calender but rather the normal iOS calendar from the Calendar-App. This has the advantage that the reminders will be synchronized over iCloud to your other iOS-Devices, Macs and Computers.",
+      "currency": "USD",
+      "genres": [
+        "Productivity",
+        "Utilities"
+      ],
+      "genreIds": [
+        "6007",
+        "6002"
+      ],
+      "releaseDate": "2012-04-12T11:37:20Z",
+      "sellerName": "Sebastian Engel",
+      "bundleId": "de.dreamapp.iMindU",
+      "trackId": 517454634,
+      "trackName": "iMindU",
+      "primaryGenreName": "Productivity",
+      "primaryGenreId": 6007,
+      "formattedPrice": "$0.99",
+      "wrapperType": "software",
+      "trackCensoredName": "iMindU",
+      "languageCodesISO2A": [
+        "EN"
+      ],
+      "fileSizeBytes": "755956",
+      "contentAdvisoryRating": "4+",
+      "artworkUrl100": "http://a79.phobos.apple.com/us/r1000/104/Purple/v4/d6/cf/fc/d6cffc1a-a48e-5d23-9a3f-741963ba46df/eXppqQbkoaO8ljaCH8Pyf0-temp-upload.rtakdzkl.png",
+      "trackViewUrl": "https://itunes.apple.com/us/app/imindu/id517454634?mt=8&uo=4",
+      "trackContentRating": "4+"
+    }
+  ]
+}

@@ -1,3 +1,9 @@
+<?php
+error_reporting(E_ALL);
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,6 +43,7 @@
                 <li class="item"><a href="#all" data-filter="*">All</a></li>
                 <li class="item"><a href="#webdev" data-filter=".webdev">Webdevelopment</a></li>
                 <li class="item"><a href="#scripts" data-filter=".scripts">Scripts</a></li>
+                <li class="item"><a href="#apps" data-filter=".apps">Apps</a></li>
                 <li class="item"><a href="#photo" data-filter=".photo">Photography</a></li>
                 <li class="item"><a href="#ps" data-filter=".ps">Photoshop</a></li>
             </ul>
@@ -50,7 +57,7 @@
         include 'php/functions.php';  
         
         // $blocksArray = array_merge(photo(), ps()); 
-        $blocksArray = array_merge(webdev(), scripts(), photo(), ps()); 
+        $blocksArray = array_merge(webdev(), scripts(), photo(), ps(), apps()); 
         shuffle($blocksArray);
         
         foreach($blocksArray as $key => $value) {
@@ -58,11 +65,7 @@
         }
         
         ?>
-        
-        
-        
-        
-        
+                
     </section>
     
     <noscript>
