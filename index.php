@@ -1,6 +1,29 @@
 <?php
 error_reporting(E_ALL);
+date_default_timezone_set('Europe/Berlin');
 
+$reqfilename = basename($_SERVER['PHP_SELF'], ".php");
+
+$cachefile = "cache/".$reqfilename.".html";
+
+
+// Serve from the cache if it is the same age or younger than the last 
+// modification time of the included file (includes/$reqfilename)
+
+if (file_exists($cachefile) && (filemtime($reqfilename.".php") < filemtime($cachefile))) {
+
+    include($cachefile);
+    
+    echo "<!-- Cached ".date('H:i', filemtime($cachefile))." 
+    -->";
+    
+    
+    exit;
+}
+
+
+ // start the output buffer
+ob_start();
 
 
 ?>
@@ -45,7 +68,7 @@ error_reporting(E_ALL);
                 <li class="item"><a href="#scripts" data-filter=".scripts">Scripts</a></li>
                 <li class="item"><a href="#apps" data-filter=".apps">Apps</a></li>
                 <li class="item"><a href="#photo" data-filter=".photo">Photography</a></li>
-                <li class="item"><a href="#ps" data-filter=".ps">Photoshop</a></li>
+                <li class="item"><a href="#ps" data-filter=".ps">Graphic design</a></li>
             </ul>
         </nav>
     </section>
@@ -56,7 +79,6 @@ error_reporting(E_ALL);
         
         include 'php/functions.php';  
         
-        // $blocksArray = array_merge(photo(), ps()); 
         $blocksArray = array_merge(webdev(), scripts(), photo(), ps(), apps()); 
         shuffle($blocksArray);
         
@@ -96,3 +118,19 @@ error_reporting(E_ALL);
     
 </body>
 </html>
+
+<?php
+
+// open the cache file for writing
+$fp = fopen($cachefile, 'w');
+
+ // save the contents of output buffer to the file
+fwrite($fp, ob_get_contents());
+
+ // close the file
+fclose($fp);
+
+ // Send the output to the browser
+ob_end_flush();
+
+?>

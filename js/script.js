@@ -265,17 +265,6 @@ $(document).ready(function() {
                                                         });
     }
     
-    $.fn.textHeight = function() {
-      var node, original, width;
-      original = $(this).html();
-      node = $("<span style='position:absolute;width:auto;left:-9999px'>" + original + "</span>");
-      node.css('font-family', $(this).css('font-family')).css('font-size', $(this).css('font-size'));
-      $('body').append(node);
-      height = node.height();
-      node.remove();
-      return width;
-    };
-    
     // remove autofill mark in Safari and Chrome
     if(navigator.userAgent.toLowerCase().indexOf("chrome") >= 0 || navigator.userAgent.toLowerCase().indexOf("safari") >= 0){
         window.setInterval(function(){
@@ -286,14 +275,7 @@ $(document).ready(function() {
         }, 20);
     }
     
-    $('.description').each(function() {
-        var content;
-        content = $(this).text().replace(/\s+/gi, ' ');
-        if ($(this).textHeight() > $(this).height()) {
-          return $(this).attr('title', content).tooltip();
-        }
-      });
-    
     $('#contactWrapper form').attr('action', 'php/send.php');
+    $('#contactWrapper form').validate();
     
 });

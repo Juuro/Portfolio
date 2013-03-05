@@ -41,7 +41,7 @@
                 <li class="item"><a href="index.php#scripts" data-filter=".scripts">Scripts</a></li>
                 <li class="item"><a href="index.php#apps" data-filter=".apps">Apps</a></li>
                 <li class="item"><a href="index.php#photo" data-filter=".photo">Photography</a></li>
-                <li class="item"><a href="index.php#ps" data-filter=".ps">Photoshop</a></li>
+                <li class="item"><a href="index.php#ps" data-filter=".ps">Graphic design</a></li>
             </ul>
         </nav>
     </section>
@@ -51,9 +51,9 @@
             <h3>Contact</h3>
             
             <form action="php/noscript.php" method="post">
-                <input name="name" placeholder="What is your name?" class="name" type="text" required />
+                <input name="name" placeholder="What is your name?" class="name" type="text" required minlength="2" />
                 <input name="emailaddress" placeholder="What is your email?" class="emailaddress" type="email" required />
-                <textarea rows="4" cols="50" name="message" placeholder="Please enter your message" class="message" required></textarea>
+                <textarea rows="4" cols="50" name="message" placeholder="Please enter your message" class="message" required minlength="10"></textarea>
                 <input name="submit" class="btn" type="submit" value=">" />
             </form>           
             

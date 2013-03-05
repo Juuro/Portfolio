@@ -733,7 +733,7 @@ footer {
       transition: all 300ms ease-in-out;
       position: absolute;
       top: 405px;
-      left: 203px;
+      left: 278px;
       z-index: 7;
       color: white; }
       /* line 713, ../sass/screen.scss */
@@ -781,7 +781,7 @@ footer {
     /* line 761, ../sass/screen.scss */
     #contactWrapper .contact label {
       position: absolute;
-      left: 20px;
+      left: 95px;
       margin-top: -69px;
       padding: 10px;
       display: block;

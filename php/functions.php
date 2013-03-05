@@ -1,8 +1,6 @@
 <?php
 
-date_default_timezone_set('Europe/Berlin');
-
-function apps() {
+function itunes() {
     $filename = "apps";    
 
     $string = file_get_contents("files/".$filename.".json");
@@ -44,6 +42,11 @@ EOT;
 
     return $blocksArray;
 
+}
+
+function apps() {
+    $filename = "apps";
+    return github($filename);
 }
 
 function webdev() {
@@ -95,7 +98,9 @@ $html = <<<EOT
     <div class="block">
         <div class="front gradient">
             <h3>$repoName</h3>
-            <div class="description">$repoDesc</div>            
+            <div class="description">$repoDesc
+                <div class="blender"></div>
+            </div>            
         </div>
         <div class="back gradient">
             <h3>$repoName</h3>
