@@ -1,5 +1,7 @@
 $(document).ready(function() {
     
+    var $container = $('#blocksWrapper');
+    
     $(window).bind('load', function() {
         $(':animated').promise().done(function(){
             
@@ -44,8 +46,6 @@ $(document).ready(function() {
     $(window).bind('hashchange', function (){
        checkHash();
     });
-   
-    var $container = $('#blocksWrapper');
            
     $container.isotope({
         itemSelector : '.cont'
@@ -107,6 +107,10 @@ $(document).ready(function() {
         $(':animated').promise().done(function(){
             clearTimeout(this.id);
             this.id = setTimeout(doneResizing, 1000);
+        });
+        
+        $container.isotope({
+            itemSelector : '.cont'
         });
         
         getBottomDownload();

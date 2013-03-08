@@ -265,8 +265,8 @@ header {
         }
         
         &.photo .front {
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6d3987', endColorstr='#8b49ab');
-            @include background(linear-gradient(-45deg, #6d3987 20%, #8b49ab 70%));
+            // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6d3987', endColorstr='#8b49ab');
+            // @include background(linear-gradient(-45deg, #6d3987 20%, #8b49ab 70%));
             
             h3 {
                 display: none;
@@ -274,8 +274,8 @@ header {
         }
         
         &.ps .front {
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00984c', endColorstr='#00cb66');
-            @include background(linear-gradient(-45deg, #00984c 20%, #00cb66 70%));
+            // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00984c', endColorstr='#00cb66');
+            // @include background(linear-gradient(-45deg, #00984c 20%, #00cb66 70%));
             
             h3 {
                 display: none;
@@ -363,24 +363,22 @@ header {
             box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.8), inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 2px 0px rgba(255, 255, 255, 0.1);
             z-index: 2000;
             
+            h3 {
+                margin-bottom: 10px;
+            }
+            
             a {
                 color: hsl(0, 0%, 81%);
                 font-size: 12px;
                 font-weight: 400;
             }
             
-            .updated, .lang, .demo, .url, .description {
+            .updated, .lang, .demo, .url, .description, .da {
                 display: block;
                 font-size: 12px;
                 font-weight: normal;
-            }
-            
-            .url {
-                margin-top: 10px;
-            }
-            
-            .demo {
                 margin-top: 5px;
+                text-decoration: none;
             }
             
             .lang {
@@ -584,7 +582,7 @@ footer {
             display: block;
             width: 200px;
             position: absolute;
-            left: 275px;
+            left: 350px;
             padding: 8px 8px 3px 8px;
             // -webkit-backface-visibility: hidden;
             // -webkit-transform:translate3d(0,0,0);
@@ -651,6 +649,10 @@ footer {
                     
                     &:nth-child(1) {
                         width: 200px;
+                    }
+                    
+                    .bold {
+                        font-weight: bold;
                     }
                 }
                 

@@ -89,7 +89,7 @@ function github($filename){
             $repoUrl = $repo['html_url'];
             $repoDemo = $repo['homepage'];
             $repoUpdated = date_create($repo['updated_at']);
-            $repoUpdated = date_format($repoUpdated, 'Y-m-d');
+            $repoUpdated = date_format($repoUpdated, 'd.m.Y');
 
 
 
@@ -104,16 +104,16 @@ $html = <<<EOT
         </div>
         <div class="back gradient">
             <h3>$repoName</h3>
-            <a href="$repoUrl" class="url">view on GitHub</a>
+            <a href="$repoUrl" class="url" data-icon="&#xe00f;"> view on GitHub</a>
 EOT;
 
             if ($repoDemo != ""){
-                $html .= "<a href=\"".$repoDemo."\" class=\"demo\">demo</a>";                
+                $html .= "<a href=\"".$repoDemo."\" class=\"demo\" data-icon=\"&#xe01c;\"> demo</a>";                
             }            
 
 $html .= <<<EOT
             <span class="lang">Programming language: $repoLang</span>
-            <span class="updated">$repoUpdated</span>
+            <span class="updated">Updated: $repoUpdated</span>
         </div>
     </div>
 </div>
@@ -149,7 +149,8 @@ function deviantart($filename) {
         }
 
         $photo = json_decode(get_data($url), true);
-        $photoUrl = $photo["thumbnail_url"];
+        $thumbUrl = $photo["thumbnail_url"];
+        $photoUrl = $photo["url"];
         $photoTitle = $photo["title"];
         $photoWidth = $photo["width"];
         $photoHeight = $photo["height"];
@@ -172,7 +173,8 @@ $html = <<< EOT
         </div>
         <div class="back gradient">
             <h3>$photoTitle</h3>
-            <a href="$val">$val</a>
+            <a href="$photoUrl" rel="lightbox[$filename]" title="$photoTitle" class="url" data-icon="&#xe01a;"> view full-size</a>
+            <a href="$val" class="url da" data-icon="&#xe00c;"> view on deviantArt</a>
         </div>
     </div>
 </div>
