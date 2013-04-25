@@ -9,6 +9,6 @@ include 'php/functions.php';
 //     echo $value;
 // }
 
-apps();
+github(scripts);
 
 ?>

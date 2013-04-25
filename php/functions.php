@@ -81,8 +81,8 @@ function github($filename){
     foreach ($jsonIterator as $key => $val) {
         $url = $val.$githubAuth;       
         $repo = json_decode(get_data($url), true);
-
-        if (!isset($repo['message']) || $repo['message'] != 'Not Found') {            
+        if (!isset($repo['message']) || $repo['message'] != 'Not Found') {
+            
             $repoName = $repo['name'];
             $repoDesc = $repo['description'];
             $repoLang = $repo['language'];
@@ -202,6 +202,7 @@ function get_data($url) {
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+    curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
     $data = curl_exec($ch);
 
     if (curl_exec($ch) === false) {
