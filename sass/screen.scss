@@ -160,8 +160,8 @@ header {
         margin: 0 auto;
         width: $menuWidth;
         position: relative;
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e50207', endColorstr='#cf0206',GradientType=0 ); /* IE6-8 */   
-        @include background(linear-gradient(#e50207 0%,#c00204 50%,#a10002 51%,#cf0206 100%));
+        // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e50207', endColorstr='#cf0206',GradientType=0 ); /* IE6-8 */   
+        // @include background(linear-gradient(#e50207 0%,#c00204 50%,#a10002 51%,#cf0206 100%));
 
         ul {
             list-style: none;
@@ -169,10 +169,13 @@ header {
             margin: 0;
 
             li {
-                float: left;		
+                float: left;	
+                width: 150px;	
                 position: relative;
                 text-align: center;
                 line-height: 45px;
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e50207', endColorstr='#cf0206',GradientType=0 ); /* IE6-8 */   
+                @include background(linear-gradient(#e50207 0%,#c00204 50%,#a10002 51%,#cf0206 100%));
 
                 &:last-child {
                     box-shadow: 3px 0px 4px -1px rgba(0, 0, 0, .3);
@@ -186,8 +189,8 @@ header {
                     color: white;
                     position: relative;
                     display: block;
-                    width: 150px;
                     height: 45px;
+                    width: 100%;
                     font-family: Arial;
                     font-size: 11px;
                     font-weight: 100;
@@ -905,6 +908,9 @@ footer {
                 background-color: hsla(0, 0%, 0%, 0.2);
                 cursor: move;
                 text-shadow: none;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
                 
                 &.ui-sortable-helper {
                     &:hover {
@@ -983,6 +989,75 @@ background-size: 100%;
         .address {
             float: left;
             width: 400px;
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    header {
+        h1 {
+            font-size: 50px;
+        }
+        h2 {
+            font-size: 100px;
+        }
+        
+    }
+
+    #navWrapper {
+    
+        height: 90px;
+        #menu {
+            width: 100%;
+            
+            ul {
+                
+                li {
+                    float: left;
+                    width: 33%;
+                }
+            }
+        }
+    }
+    
+    #sourcesWrapper, #imprintWrapper, #contactWrapper, #resumeWrapper {
+        width: 100%;
+        margin: none
+    }
+    
+    footer {
+        ul {
+            li {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    
+    h1 {
+        font-size: 20px;
+        top: 0px;
+        @include transition(all 0s);
+        
+        &:hover {
+            top: 0px;
+        }
+    }
+    
+    #navWrapper {
+        height: 270px;
+        #menu {
+            width: 100%;
+            
+            ul {
+                
+                li {
+                    float: left;
+                    width: 100%;
+                }
+            }
         }
     }
 }
