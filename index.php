@@ -1,9 +1,8 @@
 <?php
-error_reporting(E_ALL);
+
 date_default_timezone_set('Europe/Berlin');
 
 $reqfilename = basename($_SERVER['PHP_SELF'], ".php");
-
 $cachefile = "cache/".$reqfilename.".html";
 
 
