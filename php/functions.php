@@ -173,7 +173,7 @@ $html = <<< EOT
         </div>
         <div class="back gradient">
             <h3>$photoTitle</h3>
-            <a href="$photoUrl" rel="lightbox[$filename]" title="$photoTitle" class="url" data-icon="&#xe01a;"> view full-size</a>
+            <a href="$photoUrl" title="$photoTitle" class="fancybox url" data-icon="&#xe01a;" data-fancybox-group="$filename"> view full-size</a>
             <a href="$val" class="url da" data-icon="&#xe00c;"> view on deviantArt</a>
         </div>
     </div>

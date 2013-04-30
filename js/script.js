@@ -1,5 +1,16 @@
 $(document).ready(function() {
     
+    $(".fancybox").fancybox({
+        padding : 0,
+        helpers : {
+            overlay : {
+                css : {
+                    'background' : 'rgba(40, 40, 40, 0.95)'
+                }
+            }
+        }
+    });
+    
     var $container = $('#blocksWrapper');
     
     $(window).bind('load', function() {

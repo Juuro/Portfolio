@@ -36,7 +36,7 @@ ob_start();
     
     <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="css/print.css" media="print" rel="stylesheet" type="text/css" />
-    <link href="css/lightbox.css" rel="stylesheet" />
+    <link href="css/jquery.fancybox.css" rel="stylesheet" />
     <!--[if IE]>
         <link href="/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
@@ -113,7 +113,7 @@ ob_start();
     <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
     <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
     <script type="text/javascript" src="js/isotope.min.js"></script>
-    <script type="text/javascript" src="js/lightbox.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.4"></script>
     <script type="text/javascript" src="js/script.js"></script>
     
     <script type="text/javascript">
